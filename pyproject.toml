@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cinema3"
+version = "0.0.1"
+description = "Django Cinema3 application"
+requires-python = ">=3.10"
+dependencies = [
+    "Django>=4.2,<5",
+    "Pillow>=10.0",
+]
+
+[tool.setuptools]
+packages = [
+    "karaoke",
+    "clubuser",
+    "rooms",
+    "otziv",
+    "guest_otziv",
+]
+include-package-data = true
+
+[tool.vercel]
+entrypoint = "karaoke.wsgi:application"
+
+[tool.vercel.scripts]
+build = "python manage.py collectstatic --noinput"

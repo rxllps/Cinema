@@ -6,6 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "замените-на-свой-секретный-ключ"
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -36,6 +37,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "karaoke.urls"
+WSGI_APPLICATION = "karaoke.wsgi.application"
 
 TEMPLATES = [{
     "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -64,6 +66,7 @@ USE_TZ        = True
 
 STATIC_URL  = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL   = "/media/"
 MEDIA_ROOT  = BASE_DIR / "media"
 
