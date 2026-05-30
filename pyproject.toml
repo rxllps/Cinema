@@ -1,2 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cinema3"
+version = "0.0.1"
+description = "Django Cinema3 application"
+requires-python = ">=3.10"
+dependencies = [
+    "Django>=4.2,<5",
+]
+
 [tool.vercel]
 entrypoint = "karaoke.wsgi:application"
