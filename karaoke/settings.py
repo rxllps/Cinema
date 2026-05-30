@@ -36,6 +36,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "karaoke.urls"
+WSGI_APPLICATION = "karaoke.wsgi.application"
 
 TEMPLATES = [{
     "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -64,9 +65,11 @@ USE_TZ        = True
 
 STATIC_URL  = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL   = "/media/"
 MEDIA_ROOT  = BASE_DIR / "media"
 
 LOGIN_URL          = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/cabinet/"
 LOGOUT_REDIRECT_URL = "/"
+
