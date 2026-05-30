@@ -59,7 +59,7 @@
               <span class="slot busy" title="Занято">{{ slot.start_time|time:"H:i" }}</span>
             {% else %}
               {% if user.is_authenticated %}
-                <a href="{% url 'book_slot' slot.pk %}"
+                <a href="{% url 'rooms:book_slot' slot.pk %}"
                    class="slot free js-book"
                    data-slot="{{ slot.pk }}"
                    data-room="{{ room.name }}"
@@ -82,7 +82,7 @@
       </div>
 
       <div class="room-footer">
-        <a href="{% url 'room_schedule' room.url_name %}" class="btn-outline">
+        <a href="{% url 'rooms:room_schedule' room.url_name %}" class="btn-outline">
           Подробнее →
         </a>
       </div>

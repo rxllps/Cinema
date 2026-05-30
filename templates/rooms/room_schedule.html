@@ -42,7 +42,7 @@
 			<div>
 				{{ slot.start_time }}-{{ slot.end_time }}
 			</div>
-      <a href="{% url 'book_slot' slot.pk %}" class="btn-book">
+      <a href="{% url 'rooms:book_slot' slot.pk %}" class="btn-book">
         Забронировать
       </a>
       <a href="#reviews" class="btn-outline">
@@ -131,7 +131,7 @@
       </div>
       {% else %}
       {% if user.is_authenticated %}
-      <a href="{% url 'book_slot' slot.pk %}" class="slot-status available">
+      <a href="{% url 'rooms:book_slot' slot.pk %}" class="slot-status available">
         Свободно · {{ room.price_per_hour }} ₽
       </a>
       {% else %}
@@ -174,9 +174,8 @@
   {% if user.is_authenticated %}
   <div class="review-form">
     <h4>Оставить отзыв</h4>
-    <form method="post">
+    <form method="post" action="{% url 'otziv:add_review' room_id=room.pk %}">
       {% csrf_token %}
-      <input type="hidden" name="room" value="{{ room.pk }}">
       
       <div class="form-group">
         <label>Оценка</label>
