@@ -35,7 +35,7 @@
       </div>
       
       <div class="package-footer">
-        <a href="{% url 'rooms_home' %}" class="btn-book">Выбрать</a>
+        <a href="{% url 'rooms:rooms_home' %}" class="btn-book">Выбрать</a>
       </div>
     </div>
     {% empty %}
@@ -55,7 +55,7 @@
         <div class="room-meta">до {{ room.capacity }} чел.</div>
       </div>
       <div class="rate-price">{{ room.price_per_hour }} ₽/час</div>
-      <a href="{% url 'rooms_home' %}" class="btn-outline">Забронировать</a>
+      <a href="{% url 'rooms:rooms_home' %}" class="btn-outline">Забронировать</a>
     </div>
     {% endfor %}
   </div>

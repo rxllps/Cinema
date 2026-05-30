@@ -50,7 +50,7 @@
         </span>
         <span class="count">({{ room.reviews.count }} отзывов)</span>
       </div>
-      <a href="{% url 'room_schedule' room.url_name %}" class="btn-book">
+      <a href="{% url 'rooms:room_schedule' room.url_name %}" class="btn-book">
         Забронировать →
       </a>
     </div>
